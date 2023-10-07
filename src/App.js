@@ -9,23 +9,24 @@ import { InsertionSort } from './components/InsertionSort';
 import { useState } from 'react';
 
 function App() {
-  const [sort, setSort] = useState("QuickSort");
+  const [algorithm, setAlgorithm] = useState("");
 
   // Define a component map for dynamically rendering algorithms
   const components = {
     BubbleSort: BubbleSort,
     QuickSort: QuickSort,
-    InsertionSort: InsertionSort,
+    // InsertionSort: InsertionSort,
   };
 
   // Render the selected component based on sort state
-  const SortComponent = components[sort];
+  const SortComponent = components[algorithm];
   return (
     <div className="App">
       <header className="App-header">
-        <Navbar />
-        <Footer />
+        <Navbar setAlgorithm={setAlgorithm} />
         {SortComponent && <SortComponent />}
+        Main -- {algorithm}
+        <Footer />
       </header>
     </div>
   );
