@@ -4,7 +4,6 @@ import { Footer } from './components/Footer';
 
 import { BubbleSort } from './algorithms/BubbleSort';
 import { QuickSort } from './algorithms/QuickSort';
-import { InsertionSort } from './components/InsertionSort';
 
 import { useState } from 'react';
 
@@ -24,8 +23,11 @@ function App() {
     <div className="App">
       <header className="App-header">
         <Navbar setAlgorithm={setAlgorithm} />
-        {SortComponent && <SortComponent />}
-        Main -- {algorithm}
+        <div className='App-main' >
+          {SortComponent && <SortComponent />}
+          Main -- {algorithm}
+        </div>
+
         <Footer />
       </header>
     </div>
